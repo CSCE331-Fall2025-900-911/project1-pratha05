@@ -1,12 +1,532 @@
 <!DOCTYPE html>
-<html>
-    <h4 style="text-align: right;">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="qualifications.html">Resume</a>
-        <a href="service.html">Community</a>
-        <a href="genai.html">AI</a>
-        <hr>
-    </h4>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratha Gupta - AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <body>AI PAGE WE GONNA CHATGPT THIS AGGIE HONOR CODE</body>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+            position: relative;
+            background: linear-gradient(-45deg, #f6f8fa, #e8ecef, #dfe6e9, #b2bec3);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtle Particles */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover {
+            color: #1e90ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #1e90ff, #6a5acd);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        #hero .tagline {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        #hero .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #5a6c7d;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card span {
+            font-size: 1.5rem;
+        }
+
+        /* Projects Section */
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #2c3e50;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-item span {
+            font-size: 2rem;
+        }
+
+        .project-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .project-item p {
+            font-size: 1rem;
+            color: #5a6c7d;
+        }
+
+        /* Statistics Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            color: #1e90ff;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #5a6c7d;
+        }
+
+        /* CTA Section */
+        #cta {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        #cta p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #5a6c7d;
+        }
+
+        #cta button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #1e90ff, #6a5acd);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cta button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Prompt Box */
+        #prompt-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            max-width: 300px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 0.85rem;
+            color: #2c3e50;
+            z-index: 1000;
+            overflow: auto;
+            max-height: 400px;
+        }
+
+        #prompt-box h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills {
+                flex-direction: column;
+            }
+
+            .project-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+
+    <header>
+        <div class="logo"><a href="index.html">Pratha Gupta</a></div>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Projects</a></li>
+                <li><a href="qualifications.html">Resume</a></li>
+                <li><a href="service.html">Community</a></li>
+                <li><a href="genai.html">AI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Pratha Gupta</h1>
+        <div class="tagline">AI Innovator • Problem Solver • Future Tech Leader</div>
+        <div class="quote">"Transforming abstract ideas into practical solutions that make a difference"</div>
+        <div class="skills">
+            <div class="skill-card"><span>🐍</span> Python</div>
+            <div class="skill-card"><span>🤖</span> AI/ML</div>
+            <div class="skill-card"><span>💻</span> C++</div>
+            <div class="skill-card"><span>☕</span> Java</div>
+            <div class="skill-card"><span>📊</span> Data Science</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Signature Projects</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px; color: #5a6c7d;">Where innovation meets impact - solving real-world problems through code</p>
+        <div class="projects-list">
+            <div class="project-item">
+                <span>🎯</span>
+                <div>
+                    <h3>Aggie Assistant</h3>
+                    <p>AI-powered voice chatbot with OpenAI integration that revolutionized user interactions, reducing login time by over 150% through automated audio commands and natural language processing.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <span>📈</span>
+                <div>
+                    <h3>AI Stock Market Predictor</h3>
+                    <p>Collaborative machine learning project with alumni from leading institutions, applying regression models and data analysis to forecast market fluctuations with remarkable accuracy.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <span>🧠</span>
+                <div>
+                    <h3>Wild Minds</h3>
+                    <p>Game-based healthcare website leveraging JavaScript and predictive algorithms for early dementia detection, bridging technology and human well-being through innovative design.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <span>🎓</span>
+                <div>
+                    <h3>NCLEX AI Gamification</h3>
+                    <p>Research project at Texas A&M training LLaMA and GPT models to gamify healthcare exam preparation, demonstrating AI's potential in educational transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Efficiency Improvement</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Programming Languages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="∞">0</div>
+                <div class="stat-label">Creative Possibilities</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Passion-Driven</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <h2>Ready to Innovate Together?</h2>
+        <p>Let's create the future of technology, one solution at a time. Whether it's AI, healthcare tech, or the next big breakthrough - I'm ready to make it happen.</p>
+        <button>Let's Connect 🚀</button>
+    </section>
+
+    <div id="prompt-box">
+        <h3>AI Generation Prompt</h3>
+        Create a dynamic, modern elevator pitch website for Pratha Gupta, a computer science student passionate about AI and problem-solving. The site should be visually stunning with:
+
+1. Animated gradient background with floating particles
+2. Hero section with her name, tagline, and skill showcase cards
+3. Interactive project highlights showcasing her key work:
+   - Aggie Assistant (AI chatbot, 150% efficiency improvement)
+   - AI Stock Market Predictor (collaborative ML project)
+   - Wild Minds (dementia detection game)
+   - NCLEX AI Gamification (healthcare education research)
+4. Impact statistics section with animated counters
+5. Call-to-action for connection/collaboration
+6. Modern glassmorphism design with hover effects
+7. Responsive layout for all devices
+8. This prompt box in the bottom-right corner
+
+The tone should be professional yet creative, highlighting her technical skills (Python, AI/ML, C++, Java) while emphasizing her passion for using technology to solve real-world problems. Include smooth animations, gradient text effects, and interactive elements that make the site feel alive and engaging.
+    </div>
+
+    <script>
+        // Particles
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+            }
+            update() {
+                this.x += this.speedX * 0.05;
+                this.y += this.speedY * 0.05;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.stat-number');
+        counters.forEach(counter => {
+            const target = counter.getAttribute('data-target');
+            let count = 0;
+            const updateCount = () => {
+                const increment = target === '∞' ? 1 : Math.ceil(target / 100);
+                if (target === '∞') {
+                    counter.innerText = '∞';
+                } else if (count < target) {
+                    count += increment;
+                    counter.innerText = count + '%';
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target + '%';
+                }
+            };
+            updateCount();
+        });
+
+        // CTA Button (demo)
+        document.querySelector('#cta button').addEventListener('click', () => {
+            alert('Connecting... (Demo)');
+        });
+    </script>
+</body>
+</html>

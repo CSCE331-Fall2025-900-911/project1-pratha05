@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <h4 style="text-align: right;">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="qualifications.html">Resume</a>
-        <a href="service.html">Community</a>
-        <a href="genai.html">AI</a>
-        <hr>
-    </h4>
-    <h1>Qualities</h1>
-    <body>
+    <head>
+        <link href="Style1.css" rel="stylesheet">
+    </head>
+    
+    <body> 
+            <!--top bar-->
+    <header>
+        <h2 class="logo"><a href="index.html">Pratha_Gupta</a></h2>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Projects</a></li>
+                <li><a href="qualifications.html">Resume</a></li>
+                <li><a href="service.html">Community</a></li>
+                <li><a href="genai.html">AI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <!--main--> 
+    <main class="page-content">
+        <h3>Qualifications</h3>
+
+    <section class="resume-section">
         <iframe src="https://drive.google.com/file/d/1jTQlFkVprNlJu_o4ghj21SEeXCjM6Apl/preview" width="400" height="500" ></iframe>
 
+        <div class="skills">
+            <strong>Languages</strong>
+            <img src="Python.png" style="width:52px; height:52px;">
+            <img src="c++.png" style="width:55px; height:57px;">
+            <img src="java.png" style="width:62px; height:60px;">
+            <img src="hskell.png" style="width:50px; height:50px;">
+            <img src="html.png" style="width:55px; height:55px;">        
+        </div>
+    </section>
+
+    <section class="cs-section">
         <h3>WHY CS = WHY ME</h3>
-
+        <div id="cs-text" style="display: none;"></div>
         <p>My passion for computer science is rooted in the challenge of transforming abstract ideas into practical solutions, a drive that has consistently shaped my academic and project experiences. I am particularly drawn to software development, artificial intelligence, and data-driven systems, where technical depth meets real-world impact.</p>
-<p>One of my earliest projects, Aggie Assistant, combined Python, Tkinter, and OpenAI APIs to build a voice-recognition chatbot that streamlined user interactions. By integrating automated account login through audio commands, I reduced login time by over 150%, reinforcing my interest in how human-computer interaction can enhance efficiency and accessibility. This project deepened my appreciation for natural language processing and user-centered design.</p>
+        <p>One of my earliest projects, Aggie Assistant, combined Python, Tkinter, and OpenAI APIs to build a voice-recognition chatbot that streamlined user interactions. By integrating automated account login through audio commands, I reduced login time by over 150%, reinforcing my interest in how human-computer interaction can enhance efficiency and accessibility. This project deepened my appreciation for natural language processing and user-centered design.</p>
+        <div class="hidden-content">
+        <p>My work on the AI Stock Market Predictor further solidified my enthusiasm for machine learning. Collaborating with peers and alumni from leading institutions, I applied regression models and data analysis techniques to forecast market fluctuations. This experience highlighted the power of data-driven insights and strengthened my resolve to pursue AI as a tool for tackling uncertainty in dynamic environments.</p>
+        <p>I’ve also explored the intersection of technology and human well-being through Wild Minds, a game-based website that employed JavaScript and predictive scoring algorithms to support early detection of dementia. Similarly, in research at Texas A&M, I trained generative AI models such as LLaMA and GPT to gamify NCLEX exam preparation, demonstrating how AI can support education in healthcare. These experiences reinforced my belief that computer science can extend beyond traditional boundaries to address societal challenges.</p>
+        <p>Beyond AI, I enjoy applying computational thinking to creative domains, as seen in my work developing a 2D dungeon crawler game in C++ and constructing 3D shipwreck models using Blender and Photoshop. These projects illustrate how problem solving, logic, and design converge across diverse areas of computer science.</p>
+        <p>Ultimately, my journey reflects a consistent theme: leveraging technical rigor and creativity to design impactful solutions. Whether through AI-driven healthcare tools, predictive models, or interactive applications, I see computer science as a medium to merge innovation with meaningful societal contributions.</p>
+    </div>
 
-<p>My work on the AI Stock Market Predictor further solidified my enthusiasm for machine learning. Collaborating with peers and alumni from leading institutions, I applied regression models and data analysis techniques to forecast market fluctuations. This experience highlighted the power of data-driven insights and strengthened my resolve to pursue AI as a tool for tackling uncertainty in dynamic environments.</p>
-
-<p>I’ve also explored the intersection of technology and human well-being through Wild Minds, a game-based website that employed JavaScript and predictive scoring algorithms to support early detection of dementia. Similarly, in research at Texas A&M, I trained generative AI models such as LLaMA and GPT to gamify NCLEX exam preparation, demonstrating how AI can support education in healthcare. These experiences reinforced my belief that computer science can extend beyond traditional boundaries to address societal challenges.</p>
-
-<p>Beyond AI, I enjoy applying computational thinking to creative domains, as seen in my work developing a 2D dungeon crawler game in C++ and constructing 3D shipwreck models using Blender and Photoshop. These projects illustrate how problem solving, logic, and design converge across diverse areas of computer science.</p>
-
-<p>Ultimately, my journey reflects a consistent theme: leveraging technical rigor and creativity to design impactful solutions. Whether through AI-driven healthcare tools, predictive models, or interactive applications, I see computer science as a medium to merge innovation with meaningful societal contributions.</p>
-    <hr>
-    <p>
-        <strong>Skill/Languages</strong>
-        </p>
-        <p>
-        <img src="java.png" style="width:70px; height:60px;">
-        <img src="Python.png" style="width:50px; height:40px;">
-        <img src="c++.png" style="width:45px; height:42px;">
-        <img src="hskell.png" style="width:45px; height:42px;">
-    </p>
-    </body>
+        <button class="read-more" onclick="toggleText()">Read More</button>
+        </section>
     
+        <div class="skills_2">
+            <h3>Tools/Framework<h3> 
+<pre>Pandas, Tkinter, NumPy, Git, ATLAS.ti, Shape 3D, Blender, Photoshop</pre>
+            <h3>Certifications<h3> 
+<pre>Prutor@IITK(Python Programming), Inspirit AI Scholars Program 
+(AI & Machine Learning), AWS Certified Cloud Practitioner (In Progress)</pre>
+        </div>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/pratha1/games" class="icon">
+                <img src="github.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/pratha-05-gupta/" class="icon">
+                <img src="linkdln.png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+
+   <!-- Read More JS -->
+        <script>
+            function toggleText() {
+                const csSection = document.querySelector('.cs-section');
+                const button = document.querySelector('.read-more');
+
+                if (csSection.classList.contains('expanded')) {
+                    csSection.classList.remove('expanded');
+                    button.textContent = 'Read More';
+                } else {
+                    csSection.classList.add('expanded');
+                    button.textContent = 'Show Less';
+                }
+            }
+        </script>
+    </body>
 </html>
