@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="Style1.css" rel="stylesheet">
-        <link href="Style2.css" rel="stylesheet">
+        <link href="Style1.css" rel="stylesheet" id="styleSheet1">
+        <link href="Style2.css" rel="stylesheet" id="styleSheet2" disabled>
     </head>
     
     <body> 
             <!--top bar-->
     <header>
         <h2 class="logo"><a href="index.html">Pratha_Gupta</a></h2>
-        <nav>
-            <ul>
-                <li><a href="portfolio.html">Projects</a></li>
-                <li><a href="qualifications.html">Resume</a></li>
-                <li><a href="service.html">Community</a></li>
-                <li><a href="genai.html">AI</a></li>
-            </ul>
+        <!--channge previous css as well-->
+        <nav class="nav-boxes">
+            <a href="portfolio.html" class="nav-box">Projects</a>
+            <a href="qualifications.html" class="nav-box">Resume</a>
+            <a href="service.html" class="nav-box">Community</a>
+            <a href="genai.html" class="nav-box">AI</a>
         </nav>
     </header>
     <hr>
@@ -56,6 +55,10 @@
             <!--style="width:40px; height:40px; border-radius:10%;"-->
         <a href="https://www.linkedin.com/in/pratha-05-gupta/" class="icon"><img src="linkdln.png"></a> 
             <!--style="width:60px; height:50px; border-radius:100%;"-->
+        
+        <button id="styleToggleButton">Switch Style</button>
+
+        <script src="script.js"></script> 
 
     </div>
     </footer>
