@@ -46,29 +46,31 @@ header{
     color: #3498db; 
 }
 
-nav ul {
-    list-style: none;
+.nav-boxes {
     display: flex;
-    gap: 30px; 
+    gap: 15px;                
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 600; 
-    font-size: 1.1rem; 
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+.nav-box {
+    padding: 10px 15px;
+    border-radius: 20px;           
+    background: rgba(142, 119, 119, 0.705);  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 80px;             
+    text-decoration: none;              
+    font-family: 'Inter', 'Segoe UI', sans-serif; 
+    font-weight: 500;                   
+    font-size: 0.95rem;                
+    padding: 12px 18px;                
+    letter-spacing: 0.3px;              
+    min-width: 85px; 
 }
 
-nav ul li a:hover {
-    color: white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* ENHANCED: Gradient hover */
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+.nav-box:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-3px);      /* ← SAME HOVER EFFECT AS FOOTER ICONS */
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    text-decoration: none; 
 }
 
 
