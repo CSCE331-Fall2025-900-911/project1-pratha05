@@ -1,30 +1,44 @@
 
-let isStyle1Active = true;
+function getCurrentStyle() {
+    return localStorage.getItem('selectedStyle') || 'style1';
+}
 
-function toggleStyles() {
+
+function saveStylePreference(style) {
+    localStorage.setItem('selectedStyle', style);
+}
+
+// Apply the correct style based on saved preference
+function applyStyle(styleName) {
     const style1 = document.getElementById('styleSheet1');
     const style2 = document.getElementById('styleSheet2');
     const button = document.getElementById('styleToggleButton');
     
-    if (isStyle1Active) {
-        // Switch to Style 2
+    if (styleName === 'style2') {
         style1.disabled = true;
         style2.disabled = false;
-        button.textContent = 'Switch to Style 1';
-        isStyle1Active = false;
+        if (button) {
+            button.textContent = 'Switch to Style 1';
+        }
     } else {
-        // Switch to Style 1
         style1.disabled = false;
         style2.disabled = true;
-        button.textContent = 'Switch to Style 2';
-        isStyle1Active = true;
+        if (button) {
+            button.textContent = 'Switch to Style 2';
+        }
     }
 }
 
-// Set initial button text when page loads
+// Toggle between styles
+function toggleStyles() {
+    const currentStyle = getCurrentStyle();
+    const newStyle = currentStyle === 'style1' ? 'style2' : 'style1';
+    
+    saveStylePreference(newStyle);
+    applyStyle(newStyle);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('styleToggleButton');
-    if (button) {
-        button.textContent = 'Switch to Style 2';
-    }
+    const savedStyle = getCurrentStyle();
+    applyStyle(savedStyle);
 });
